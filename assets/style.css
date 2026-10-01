@@ -1,112 +1,410 @@
-/* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,300;0,400;0,700;1,400&family=Dosis:wght@500;600;700&display=swap');
+/* =========================================================
+   SANSA HERBS
+   Custom stylesheet for the static Cloudflare site
+   ========================================================= */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@400;600;700&family=Dosis:wght@400;500;600;700&display=swap');
+
+
+/* =========================================================
+   ROOT
+   ========================================================= */
 
 :root {
-  --green: #003b28;
+  --green: #174b3a;
+  --deep-green: #0f392b;
   --sage: #a9b388;
-  --pale: #f2f5f0;
-  --ink: #23211f;
+  --soft-sage: #dfe5d5;
+  --cream: #f7f5ef;
+  --pale: #eef2ea;
+  --ink: #2b2926;
+  --muted: #6c6a63;
+  --white: #ffffff;
 }
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
 
 * {
   box-sizing: border-box;
 }
 
-/* Base Body Styling */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--pale);
+  background: var(--cream);
   color: var(--ink);
   font-family: 'Aleo', Georgia, serif;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
-/* Hide Accessibility Skip Link */
-.skip-link, a[href="#content"] {
-  display: none !important;
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
-/* Container */
-header, main, footer {
-  max-width: 1000px;
+
+/* =========================================================
+   MAIN SITE WRAPPER
+   ========================================================= */
+
+.wrap {
+  width: 100%;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 42px;
 }
 
-/* Header & Site Title */
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
 header {
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-  margin-bottom: 30px;
-}
-
-.site-title, h1.site-title a {
-  font-family: 'Aleo', serif;
-  font-weight: 700;
-  color: var(--green);
-  text-decoration: none;
-  font-size: 1.8rem;
-}
-
-/* Navigation Layout */
-nav, .main-navigation {
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  font-family: 'Dosis', sans-serif;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 28px 0 25px;
+  border-bottom: 1px solid rgba(23, 75, 58, 0.16);
 }
 
-nav a, .main-navigation a {
-  text-decoration: none;
-  font-weight: 600;
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand {
+  display: inline-flex;
+  flex-direction: column;
+  flex-shrink: 0;
+
   color: var(--green);
-  font-size: 1rem;
+  text-decoration: none;
+
+  font-family: 'Dosis', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  line-height: 1;
 }
 
-nav a:hover, .main-navigation a:hover {
+.brand small {
+  display: block;
+  margin-top: 7px;
+
+  color: var(--muted);
+  font-family: 'Dosis', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 2.2px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+nav a {
+  color: var(--green);
+  text-decoration: none;
+
+  font-family: 'Dosis', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+nav a:hover {
   color: var(--sage);
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Aleo', serif;
-  color: var(--green);
-  margin-top: 1em;
-  margin-bottom: 0.4em;
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main {
+  width: 100%;
 }
 
-h1 { font-size: 2.2rem; }
-h2 { font-size: 1.6rem; }
 
-/* Buttons & Links */
-.button, button, a.button, input[type="submit"] {
-  display: inline-block;
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(380px, 1.08fr);
+  align-items: center;
+  gap: 70px;
+
+  min-height: 650px;
+  padding: 70px 0 85px;
+}
+
+
+/* =========================================================
+   HERO TEXT
+   ========================================================= */
+
+.hero > div {
+  max-width: 520px;
+}
+
+.eyebrow {
+  margin-bottom: 18px;
+
+  color: var(--sage);
+
   font-family: 'Dosis', sans-serif;
-  background-color: var(--green);
-  color: #ffffff !important;
-  padding: 10px 20px;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  margin-right: 10px;
-  margin-top: 10px;
 }
 
-.button:hover, button:hover {
-  background-color: var(--sage);
-  color: var(--green) !important;
+.hero h1 {
+  margin: 0 0 25px;
+
+  color: var(--green);
+
+  font-family: 'Aleo', Georgia, serif;
+  font-size: clamp(3rem, 5vw, 4.7rem);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: -1.5px;
 }
 
-/* Responsive Images */
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-  margin-top: 15px;
+.hero p {
+  max-width: 490px;
+  margin: 0 0 28px;
+
+  color: var(--muted);
+
+  font-family: 'Aleo', Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.hero > img {
+  width: 100%;
+  max-width: 560px;
+  height: 560px;
+
+  object-fit: cover;
+
+  border-radius: 2px;
+  margin: 0;
+
+  box-shadow:
+    0 18px 45px rgba(15, 57, 43, 0.10);
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.button {
+  display: inline-block;
+
+  margin: 4px 16px 0 0;
+  padding: 13px 23px;
+
+  background: var(--green);
+  color: var(--white);
+
+  border: 1px solid var(--green);
+  border-radius: 2px;
+
+  font-family: 'Dosis', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.button:hover {
+  background: var(--deep-green);
+  border-color: var(--deep-green);
+  color: var(--white);
+}
+
+
+/* =========================================================
+   SECONDARY TEXT LINK
+   ========================================================= */
+
+.textlink {
+  display: inline-block;
+
+  color: var(--green);
+
+  font-family: 'Dosis', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid rgba(23, 75, 58, 0.35);
+  padding-bottom: 2px;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.textlink:hover {
+  color: var(--sage);
+  border-color: var(--sage);
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+a:focus-visible {
+  outline: 2px solid var(--sage);
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .wrap {
+    padding: 0 25px;
+  }
+
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+    padding: 25px 0 22px;
+  }
+
+  nav {
+    justify-content: flex-start;
+    gap: 12px 20px;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 42px;
+
+    min-height: auto;
+    padding: 55px 0 65px;
+  }
+
+  .hero > div {
+    max-width: 650px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 9vw, 4rem);
+  }
+
+  .hero > img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+  .wrap {
+    padding: 0 19px;
+  }
+
+  .brand {
+    font-size: 1.3rem;
+  }
+
+  nav {
+    gap: 10px 16px;
+  }
+
+  nav a {
+    font-size: 0.78rem;
+    letter-spacing: 0.7px;
+  }
+
+  .hero {
+    padding: 45px 0 55px;
+    gap: 35px;
+  }
+
+  .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+  }
+
+  .hero h1 {
+    margin-bottom: 20px;
+    font-size: 2.65rem;
+    line-height: 1.08;
+  }
+
+  .hero p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .button {
+    margin-bottom: 14px;
+  }
+
+  .textlink {
+    display: block;
+    width: fit-content;
+  }
 }
