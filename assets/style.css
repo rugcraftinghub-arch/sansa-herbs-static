@@ -963,3 +963,45 @@ grid-template-columns: 1fr;
 padding: 55px 0;
 }
 }
+/* Homepage cards */
+
+.card-grid {
+  grid-template-columns: 1fr;
+}
+
+.home-section {
+  padding: 55px 0;
+}
+}
+
+/* Article layout fix */
+.articlebody {
+  display: block;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.articlebody > * {
+  width: auto;
+  max-width: 100%;
+}
+
+.articlebody p,
+.articlebody ul,
+.articlebody ol,
+.articlebody h2,
+.articlebody h3,
+.articlebody blockquote,
+.articlebody .note,
+.articlebody hr {
+  grid-column: auto;
+}
+
+.articlebody .note {
+  display: block;
+}
+
+.articlebody table {
+  width: 100%;
+  border-collapse: collapse;
+}
