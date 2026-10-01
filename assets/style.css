@@ -963,26 +963,17 @@ grid-template-columns: 1fr;
 padding: 55px 0;
 }
 }
-/* Homepage cards */
-
-.card-grid {
-  grid-template-columns: 1fr;
-}
-
-.home-section {
-  padding: 55px 0;
-}
-}
 
 /* Article layout fix */
+
 .articlebody {
-  display: block;
+  display: block !important;
   max-width: 850px;
   margin: 0 auto;
 }
 
 .articlebody > * {
-  width: auto;
+  width: 100%;
   max-width: 100%;
 }
 
@@ -993,8 +984,9 @@ padding: 55px 0;
 .articlebody h3,
 .articlebody blockquote,
 .articlebody .note,
-.articlebody hr {
-  grid-column: auto;
+.articlebody hr,
+.articlebody table {
+  grid-column: auto !important;
 }
 
 .articlebody .note {
