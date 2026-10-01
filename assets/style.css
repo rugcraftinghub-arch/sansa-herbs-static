@@ -1,410 +1,965 @@
 /* =========================================================
-   SANSA HERBS
-   Custom stylesheet for the static Cloudflare site
-   ========================================================= */
-
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@400;600;700&family=Dosis:wght@400;500;600;700&display=swap');
-
+SANSA HERBS
+Shared stylesheet for the static Cloudflare site
+========================================================= */
 
 /* =========================================================
-   ROOT
-   ========================================================= */
+ROOT
+========================================================= */
 
 :root {
-  --green: #174b3a;
-  --deep-green: #0f392b;
-  --sage: #a9b388;
-  --soft-sage: #dfe5d5;
-  --cream: #f7f5ef;
-  --pale: #eef2ea;
-  --ink: #2b2926;
-  --muted: #6c6a63;
-  --white: #ffffff;
+--green: #174b3a;
+--deep-green: #0f392b;
+--sage: #a9b388;
+--soft-sage: #dfe5d5;
+--cream: #f7f5ef;
+--pale: #eef2ea;
+--ink: #2b2926;
+--muted: #6c6a63;
+--white: #ffffff;
+--line: rgba(23, 75, 58, 0.16);
 }
 
-
 /* =========================================================
-   RESET
-   ========================================================= */
+RESET
+========================================================= */
 
 * {
   box-sizing: border-box;
-}
+  }
 
 html {
-  scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  background: var(--cream);
-  color: var(--ink);
-  font-family: 'Aleo', Georgia, serif;
-  line-height: 1.65;
+margin: 0;
+padding: 0;
+background: var(--cream);
+color: var(--ink);
+font-family: "Aleo", Georgia, serif;
+line-height: 1.65;
 }
 
 img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+display: block;
+max-width: 100%;
+height: auto;
 }
 
+figure {
+margin: 0;
+}
+
+a {
+color: var(--green);
+}
+
+a:hover {
+color: var(--sage);
+}
 
 /* =========================================================
-   MAIN SITE WRAPPER
-   ========================================================= */
+ACCESSIBILITY
+========================================================= */
+
+.skip {
+position: absolute;
+left: 15px;
+top: -100px;
+z-index: 1000;
+
+padding: 10px 15px;
+
+background: var(--green);
+color: var(--white);
+
+font-family: "Dosis", sans-serif;
+font-weight: 600;
+text-decoration: none;
+}
+
+.skip:focus {
+top: 15px;
+}
+
+a:focus-visible {
+outline: 2px solid var(--sage);
+outline-offset: 4px;
+}
+
+/* =========================================================
+MAIN SITE WRAPPER
+========================================================= */
 
 .wrap {
-  width: 100%;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 42px;
+width: 100%;
+max-width: 1180px;
+margin: 0 auto;
+padding: 0 42px;
 }
 
+main {
+width: 100%;
+}
 
 /* =========================================================
-   HEADER
-   ========================================================= */
+HEADER
+========================================================= */
 
 header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  padding: 28px 0 25px;
-  border-bottom: 1px solid rgba(23, 75, 58, 0.16);
+width: 100%;
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+gap: 40px;
+
+padding: 28px 0 25px;
+
+border-bottom: 1px solid var(--line);
 }
 
-
 /* =========================================================
-   BRAND
-   ========================================================= */
+BRAND
+========================================================= */
 
 .brand {
-  display: inline-flex;
-  flex-direction: column;
-  flex-shrink: 0;
+display: inline-flex;
+flex-direction: column;
+flex-shrink: 0;
 
-  color: var(--green);
-  text-decoration: none;
+color: var(--green);
+text-decoration: none;
 
-  font-family: 'Dosis', sans-serif;
-  font-size: 1.45rem;
-  font-weight: 700;
-  letter-spacing: 3px;
-  line-height: 1;
+font-family: "Dosis", sans-serif;
+font-size: 1.45rem;
+font-weight: 700;
+letter-spacing: 3px;
+line-height: 1;
+}
+
+.brand:hover {
+color: var(--green);
 }
 
 .brand small {
-  display: block;
-  margin-top: 7px;
+display: block;
 
-  color: var(--muted);
-  font-family: 'Dosis', sans-serif;
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 2.2px;
+margin-top: 7px;
+
+color: var(--muted);
+
+font-family: "Dosis", sans-serif;
+font-size: 0.62rem;
+font-weight: 600;
+letter-spacing: 2.2px;
 }
 
-
 /* =========================================================
-   NAVIGATION
-   ========================================================= */
+NAVIGATION
+========================================================= */
 
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  gap: 24px;
+display: flex;
+align-items: center;
+justify-content: flex-end;
+flex-wrap: wrap;
+gap: 24px;
 }
 
 nav a {
-  color: var(--green);
-  text-decoration: none;
+color: var(--green);
+text-decoration: none;
 
-  font-family: 'Dosis', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+font-family: "Dosis", sans-serif;
+font-size: 0.95rem;
+font-weight: 600;
+letter-spacing: 1px;
+text-transform: uppercase;
 
-  transition:
-    color 0.2s ease,
-    opacity 0.2s ease;
+transition:
+color 0.2s ease,
+opacity 0.2s ease;
 }
 
 nav a:hover {
-  color: var(--sage);
+color: var(--sage);
 }
-
 
 /* =========================================================
-   MAIN
-   ========================================================= */
-
-main {
-  width: 100%;
-}
-
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
-.hero {
-  display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(380px, 1.08fr);
-  align-items: center;
-  gap: 70px;
-
-  min-height: 650px;
-  padding: 70px 0 85px;
-}
-
-
-/* =========================================================
-   HERO TEXT
-   ========================================================= */
-
-.hero > div {
-  max-width: 520px;
-}
-
-.eyebrow {
-  margin-bottom: 18px;
-
-  color: var(--sage);
-
-  font-family: 'Dosis', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.hero h1 {
-  margin: 0 0 25px;
-
-  color: var(--green);
-
-  font-family: 'Aleo', Georgia, serif;
-  font-size: clamp(3rem, 5vw, 4.7rem);
-  font-weight: 600;
-  line-height: 1.06;
-  letter-spacing: -1.5px;
-}
-
-.hero p {
-  max-width: 490px;
-  margin: 0 0 28px;
-
-  color: var(--muted);
-
-  font-family: 'Aleo', Georgia, serif;
-  font-size: 1.05rem;
-  line-height: 1.75;
-}
-
-
-/* =========================================================
-   HERO IMAGE
-   ========================================================= */
-
-.hero > img {
-  width: 100%;
-  max-width: 560px;
-  height: 560px;
-
-  object-fit: cover;
-
-  border-radius: 2px;
-  margin: 0;
-
-  box-shadow:
-    0 18px 45px rgba(15, 57, 43, 0.10);
-}
-
-
-/* =========================================================
-   BUTTON
-   ========================================================= */
+BUTTON
+========================================================= */
 
 .button {
-  display: inline-block;
+display: inline-block;
 
-  margin: 4px 16px 0 0;
-  padding: 13px 23px;
+margin: 4px 16px 0 0;
+padding: 13px 23px;
 
-  background: var(--green);
-  color: var(--white);
+background: var(--green);
+color: var(--white);
 
-  border: 1px solid var(--green);
-  border-radius: 2px;
+border: 1px solid var(--green);
+border-radius: 2px;
 
-  font-family: 'Dosis', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 1.3px;
-  text-transform: uppercase;
+font-family: "Dosis", sans-serif;
+font-size: 0.9rem;
+font-weight: 700;
+letter-spacing: 1.3px;
+text-transform: uppercase;
 
-  text-decoration: none;
+text-decoration: none;
 
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease;
+transition:
+background 0.2s ease,
+border-color 0.2s ease,
+color 0.2s ease;
 }
 
 .button:hover {
-  background: var(--deep-green);
-  border-color: var(--deep-green);
-  color: var(--white);
+background: var(--deep-green);
+border-color: var(--deep-green);
+color: var(--white);
 }
 
+/* =========================================================
+HERO
+========================================================= */
+
+.hero {
+display: grid;
+grid-template-columns: minmax(0, 0.92fr) minmax(380px, 1.08fr);
+
+align-items: center;
+
+gap: 70px;
+
+min-height: 650px;
+
+padding: 70px 0 85px;
+}
+
+.hero > div {
+max-width: 520px;
+}
+
+.eyebrow {
+margin-bottom: 18px;
+
+color: var(--sage);
+
+font-family: "Dosis", sans-serif;
+font-size: 0.9rem;
+font-weight: 700;
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+
+.hero h1 {
+margin: 0 0 25px;
+
+color: var(--green);
+
+font-family: "Aleo", Georgia, serif;
+font-size: clamp(3rem, 5vw, 4.7rem);
+font-weight: 600;
+line-height: 1.06;
+letter-spacing: -1.5px;
+}
+
+.hero p {
+max-width: 490px;
+
+margin: 0 0 28px;
+
+color: var(--muted);
+
+font-family: "Aleo", Georgia, serif;
+font-size: 1.05rem;
+line-height: 1.75;
+}
+
+.hero > img {
+width: 100%;
+max-width: 560px;
+height: 560px;
+
+object-fit: cover;
+
+border-radius: 2px;
+
+margin: 0;
+
+box-shadow:
+0 18px 45px rgba(15, 57, 43, 0.10);
+}
 
 /* =========================================================
-   SECONDARY TEXT LINK
-   ========================================================= */
+SECONDARY TEXT LINK
+========================================================= */
 
 .textlink {
-  display: inline-block;
+display: inline-block;
 
-  color: var(--green);
+color: var(--green);
 
-  font-family: 'Dosis', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.6px;
+font-family: "Dosis", sans-serif;
+font-size: 0.95rem;
+font-weight: 600;
+letter-spacing: 0.6px;
 
-  text-decoration: none;
+text-decoration: none;
 
-  border-bottom: 1px solid rgba(23, 75, 58, 0.35);
-  padding-bottom: 2px;
+border-bottom: 1px solid rgba(23, 75, 58, 0.35);
 
-  transition:
-    color 0.2s ease,
-    border-color 0.2s ease;
+padding-bottom: 2px;
+
+transition:
+color 0.2s ease,
+border-color 0.2s ease;
 }
 
 .textlink:hover {
-  color: var(--sage);
-  border-color: var(--sage);
+color: var(--sage);
+border-color: var(--sage);
 }
 
-
 /* =========================================================
-   ACCESSIBILITY
-   ========================================================= */
+ARTICLE HERO
+========================================================= */
 
-a:focus-visible {
-  outline: 2px solid var(--sage);
-  outline-offset: 4px;
+.articlehero {
+max-width: 820px;
+
+padding: 75px 0 45px;
 }
 
+.articlehero h1 {
+margin: 0 0 24px;
+
+color: var(--green);
+
+font-family: "Aleo", Georgia, serif;
+font-size: clamp(2.8rem, 5vw, 4.6rem);
+font-weight: 600;
+line-height: 1.08;
+letter-spacing: -1.5px;
+}
+
+.articlehero p {
+max-width: 720px;
+
+margin: 0 0 18px;
+
+color: var(--muted);
+
+font-size: 1.08rem;
+line-height: 1.75;
+}
+
+.meta {
+margin: 0 0 28px;
+
+color: var(--muted);
+
+font-family: "Dosis", sans-serif;
+font-size: 0.88rem;
+font-weight: 500;
+letter-spacing: 0.5px;
+}
 
 /* =========================================================
-   MOBILE
-   ========================================================= */
+ARTICLE COVER
+========================================================= */
+
+.articlecover {
+width: 100%;
+max-width: 1080px;
+
+max-height: 620px;
+
+margin: 0 auto 65px;
+
+object-fit: cover;
+
+border-radius: 2px;
+
+background: var(--pale);
+
+box-shadow:
+0 18px 45px rgba(15, 57, 43, 0.08);
+}
+
+/* =========================================================
+ARTICLE LAYOUT
+========================================================= */
+
+.articlebody {
+display: grid;
+
+grid-template-columns: 220px minmax(0, 720px);
+
+gap: 70px;
+
+align-items: start;
+
+padding-bottom: 80px;
+}
+
+/* =========================================================
+ARTICLE SIDEBAR
+========================================================= */
+
+.articlebody aside {
+position: sticky;
+top: 25px;
+
+display: flex;
+flex-direction: column;
+
+gap: 9px;
+
+padding: 20px 0;
+
+border-top: 1px solid var(--line);
+border-bottom: 1px solid var(--line);
+}
+
+.articlebody aside strong {
+margin-bottom: 8px;
+
+color: var(--green);
+
+font-family: "Dosis", sans-serif;
+font-size: 0.82rem;
+font-weight: 700;
+letter-spacing: 1.5px;
+}
+
+.articlebody aside a {
+color: var(--muted);
+
+font-family: "Dosis", sans-serif;
+font-size: 0.9rem;
+font-weight: 500;
+
+line-height: 1.4;
+
+text-decoration: none;
+}
+
+.articlebody aside a:hover {
+color: var(--green);
+}
+
+/* =========================================================
+ARTICLE CONTENT
+========================================================= */
+
+.articlebody article {
+min-width: 0;
+}
+
+.articlebody article > p,
+.articlebody article > section {
+max-width: 720px;
+}
+
+.articlebody article p {
+margin: 0 0 22px;
+
+color: var(--ink);
+
+font-size: 1.03rem;
+line-height: 1.85;
+}
+
+.articlebody article a:not(.button) {
+color: var(--green);
+
+text-decoration: underline;
+text-decoration-color: rgba(23, 75, 58, 0.35);
+text-underline-offset: 3px;
+}
+
+.articlebody article a:not(.button):hover {
+color: var(--sage);
+}
+
+/* =========================================================
+ARTICLE HEADINGS
+========================================================= */
+
+.articlebody h2 {
+margin: 65px 0 20px;
+
+color: var(--green);
+
+font-family: "Aleo", Georgia, serif;
+font-size: clamp(1.9rem, 3vw, 2.65rem);
+font-weight: 600;
+line-height: 1.2;
+}
+
+.articlebody h3 {
+margin: 28px 0 10px;
+
+color: var(--green);
+
+font-family: "Dosis", sans-serif;
+font-size: 1.15rem;
+font-weight: 700;
+letter-spacing: 0.5px;
+text-transform: uppercase;
+}
+
+/* =========================================================
+ARTICLE LISTS
+========================================================= */
+
+.articlebody ul,
+.articlebody ol {
+margin: 0 0 24px;
+padding-left: 25px;
+}
+
+.articlebody li {
+margin-bottom: 8px;
+
+color: var(--ink);
+
+font-size: 1rem;
+line-height: 1.7;
+}
+
+/* =========================================================
+ARTICLE FIGURES
+========================================================= */
+
+.articlebody figure {
+margin: 38px 0;
+}
+
+.articlebody figure img {
+width: 100%;
+max-width: 720px;
+height: auto;
+
+border-radius: 2px;
+}
+
+.articlebody figure.portrait {
+max-width: 520px;
+}
+
+.articlebody figure.portrait img {
+max-width: 520px;
+}
+
+.caption {
+margin-top: 9px;
+
+color: var(--muted);
+
+font-family: "Dosis", sans-serif;
+font-size: 0.82rem;
+font-weight: 500;
+line-height: 1.5;
+}
+
+/* =========================================================
+RECIPE / NOTE BOX
+========================================================= */
+
+.note {
+margin: 30px 0 35px;
+padding: 28px 30px;
+
+background: var(--pale);
+
+border-left: 4px solid var(--sage);
+}
+
+.note strong {
+display: block;
+
+margin-bottom: 12px;
+
+color: var(--green);
+
+font-family: "Dosis", sans-serif;
+font-size: 0.95rem;
+font-weight: 700;
+letter-spacing: 0.8px;
+text-transform: uppercase;
+}
+
+.note p:last-child {
+margin-bottom: 0;
+}
+
+/* =========================================================
+ARTICLE SECTIONS
+========================================================= */
+
+.articlebody section {
+scroll-margin-top: 30px;
+}
+
+/* =========================================================
+FOOTER
+========================================================= */
+
+footer {
+margin-top: 20px;
+
+padding: 45px 0 50px;
+
+background: var(--deep-green);
+
+color: var(--white);
+}
+
+footer .wrap {
+display: flex;
+
+justify-content: space-between;
+
+gap: 40px;
+}
+
+footer div {
+font-family: "Dosis", sans-serif;
+font-size: 1rem;
+font-weight: 600;
+letter-spacing: 1px;
+line-height: 1.6;
+}
+
+footer p {
+margin: 0;
+
+color: rgba(255, 255, 255, 0.75);
+
+font-family: "Dosis", sans-serif;
+font-size: 0.82rem;
+line-height: 1.6;
+text-align: right;
+}
+
+/* =========================================================
+HOMEPAGE SECTION FOUNDATION
+These styles will support the sections we add below
+the hero.
+========================================================= */
+
+.home-section {
+padding: 85px 0;
+}
+
+.home-section:nth-child(even) {
+background: var(--pale);
+}
+
+.section-heading {
+max-width: 700px;
+
+margin-bottom: 45px;
+}
+
+.section-heading .eyebrow {
+margin-bottom: 12px;
+}
+
+.section-heading h2 {
+margin: 0 0 16px;
+
+color: var(--green);
+
+font-family: "Aleo", Georgia, serif;
+font-size: clamp(2rem, 4vw, 3.2rem);
+font-weight: 600;
+line-height: 1.15;
+}
+
+.section-heading p {
+margin: 0;
+
+color: var(--muted);
+
+font-size: 1.02rem;
+}
+
+/* =========================================================
+SIMPLE CONTENT CARDS
+========================================================= */
+
+.card-grid {
+display: grid;
+
+grid-template-columns: repeat(3, minmax(0, 1fr));
+
+gap: 28px;
+}
+
+.card {
+overflow: hidden;
+
+background: var(--white);
+
+border: 1px solid rgba(23, 75, 58, 0.10);
+
+border-radius: 2px;
+}
+
+.card img {
+width: 100%;
+aspect-ratio: 4 / 3;
+
+object-fit: cover;
+}
+
+.card-content {
+padding: 23px 24px 26px;
+}
+
+.card-content h3 {
+margin: 0 0 10px;
+
+color: var(--green);
+
+font-family: "Aleo", Georgia, serif;
+font-size: 1.35rem;
+line-height: 1.25;
+}
+
+.card-content p {
+margin: 0 0 15px;
+
+color: var(--muted);
+
+font-size: 0.95rem;
+line-height: 1.65;
+}
+
+.card-content a {
+font-family: "Dosis", sans-serif;
+font-weight: 600;
+text-decoration: none;
+}
+
+/* =========================================================
+MOBILE
+========================================================= */
 
 @media (max-width: 850px) {
 
-  .wrap {
-    padding: 0 25px;
-  }
-
-  header {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 22px;
-    padding: 25px 0 22px;
-  }
-
-  nav {
-    justify-content: flex-start;
-    gap: 12px 20px;
-  }
-
-  nav a {
-    font-size: 0.85rem;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 42px;
-
-    min-height: auto;
-    padding: 55px 0 65px;
-  }
-
-  .hero > div {
-    max-width: 650px;
-  }
-
-  .hero h1 {
-    font-size: clamp(2.8rem, 9vw, 4rem);
-  }
-
-  .hero > img {
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-  }
+.wrap {
+padding: 0 25px;
 }
 
+header {
+align-items: flex-start;
+flex-direction: column;
+gap: 22px;
+padding: 25px 0 22px;
+}
+
+nav {
+justify-content: flex-start;
+gap: 12px 20px;
+}
+
+nav a {
+font-size: 0.85rem;
+}
+
+.hero {
+grid-template-columns: 1fr;
+
+```
+gap: 42px;
+
+min-height: auto;
+
+padding: 55px 0 65px;
+```
+
+}
+
+.hero > div {
+max-width: 650px;
+}
+
+.hero h1 {
+font-size: clamp(2.8rem, 9vw, 4rem);
+}
+
+.hero > img {
+max-width: 100%;
+
+```
+height: auto;
+
+aspect-ratio: 1 / 1;
+```
+
+}
+
+/* Article */
+
+.articlehero {
+padding: 55px 0 35px;
+}
+
+.articlehero h1 {
+font-size: clamp(2.6rem, 8vw, 4rem);
+}
+
+.articlecover {
+margin-bottom: 45px;
+}
+
+.articlebody {
+grid-template-columns: 1fr;
+
+```
+gap: 35px;
+```
+
+}
+
+.articlebody aside {
+position: static;
+
+```
+order: -1;
+```
+
+}
+
+.articlebody h2 {
+margin-top: 50px;
+}
+
+/* Homepage sections */
+
+.home-section {
+padding: 65px 0;
+}
+
+.card-grid {
+grid-template-columns: 1fr 1fr;
+}
+
+/* Footer */
+
+footer .wrap {
+flex-direction: column;
+gap: 25px;
+}
+
+footer p {
+text-align: left;
+}
+}
 
 /* =========================================================
-   SMALL PHONES
-   ========================================================= */
+SMALL PHONES
+========================================================= */
 
 @media (max-width: 500px) {
 
-  .wrap {
-    padding: 0 19px;
-  }
+.wrap {
+padding: 0 19px;
+}
 
-  .brand {
-    font-size: 1.3rem;
-  }
+.brand {
+font-size: 1.3rem;
+}
 
-  nav {
-    gap: 10px 16px;
-  }
+nav {
+gap: 10px 16px;
+}
 
-  nav a {
-    font-size: 0.78rem;
-    letter-spacing: 0.7px;
-  }
+nav a {
+font-size: 0.78rem;
+letter-spacing: 0.7px;
+}
 
-  .hero {
-    padding: 45px 0 55px;
-    gap: 35px;
-  }
+.hero {
+padding: 45px 0 55px;
+gap: 35px;
+}
 
-  .eyebrow {
-    font-size: 0.78rem;
-    letter-spacing: 1.5px;
-  }
+.eyebrow {
+font-size: 0.78rem;
+letter-spacing: 1.5px;
+}
 
-  .hero h1 {
-    margin-bottom: 20px;
-    font-size: 2.65rem;
-    line-height: 1.08;
-  }
+.hero h1 {
+margin-bottom: 20px;
 
-  .hero p {
-    font-size: 0.98rem;
-    line-height: 1.7;
-  }
+```
+font-size: 2.65rem;
+line-height: 1.08;
+```
 
-  .button {
-    margin-bottom: 14px;
-  }
+}
 
-  .textlink {
-    display: block;
-    width: fit-content;
-  }
+.hero p {
+font-size: 0.98rem;
+line-height: 1.7;
+}
+
+.button {
+margin-bottom: 14px;
+}
+
+.textlink {
+display: block;
+width: fit-content;
+}
+
+/* Article */
+
+.articlehero {
+padding: 45px 0 30px;
+}
+
+.articlehero h1 {
+font-size: 2.5rem;
+}
+
+.articlehero p {
+font-size: 0.98rem;
+}
+
+.articlecover {
+margin-bottom: 35px;
+}
+
+.articlebody article p {
+font-size: 0.98rem;
+}
+
+.articlebody h2 {
+font-size: 1.9rem;
+}
+
+.note {
+padding: 22px 20px;
+}
+
+/* Homepage cards */
+
+.card-grid {
+grid-template-columns: 1fr;
+}
+
+.home-section {
+padding: 55px 0;
+}
 }
